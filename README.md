@@ -13,4 +13,6 @@ pip install https://github.com/kpu/kenlm/archive/master.zip pyctcdecode
 
 conda install -c conda-forge nvtx
 pip install hidet
+
+conda install -c conda-forge cudatoolkit-dev
 ```
