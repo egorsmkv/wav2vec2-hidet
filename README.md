@@ -38,3 +38,4 @@ Links:
 - https://huggingface.co/docs/transformers/model_doc/wav2vec2
 - https://pytorch.org/blog/introducing-hidet/
 - https://docs.hidet.org/stable/gallery/tutorials/optimize-pytorch-model.html
+- https://discuss.huggingface.co/t/integration-transformers-and-hidet-for-wav2vec2/44094
