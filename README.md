@@ -8,7 +8,8 @@ conda create -n w2v2-hidet python=3.11
 conda activate w2v2-hidet
 
 pip install 'torch>2.0.0' torchaudio
-pip install evaluate soundfile transformers pyctcdecode
+pip install evaluate soundfile transformers
+pip install https://github.com/kpu/kenlm/archive/master.zip pyctcdecode
 
 conda install -c conda-forge nvtx
 pip install hidet
