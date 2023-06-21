@@ -24,7 +24,15 @@ conda install -c conda-forge cudatoolkit-dev
 Running:
 
 ```
+wget https://huggingface.co/Yehor/wav2vec2-xls-r-300m-uk-with-small-lm/resolve/main/language_model/5gram_correct.arpa
+wget https://huggingface.co/Yehor/wav2vec2-xls-r-300m-uk-with-small-lm/raw/main/language_model/unigrams.txt
+
 python export_gpu_version.py
 
 python recognize_gpu_with_lm_and_hidet.py
 ```
+
+Links:
+
+- https://pytorch.org/blog/introducing-hidet/
+- https://docs.hidet.org/stable/gallery/tutorials/optimize-pytorch-model.html
