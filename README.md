@@ -24,6 +24,8 @@ conda install -c conda-forge cudatoolkit-dev
 Running:
 
 ```
+wget https://huggingface.co/Yehor/wav2vec2-xls-r-300m-uk-with-small-lm/resolve/main/language_model/5gram_correct.arpa
+
 python export_gpu_version.py
 
 python recognize_gpu_with_lm_and_hidet.py
