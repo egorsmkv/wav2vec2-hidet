@@ -25,6 +25,7 @@ Running:
 
 ```
 wget https://huggingface.co/Yehor/wav2vec2-xls-r-300m-uk-with-small-lm/resolve/main/language_model/5gram_correct.arpa
+wget https://huggingface.co/Yehor/wav2vec2-xls-r-300m-uk-with-small-lm/raw/main/language_model/unigrams.txt
 
 python export_gpu_version.py
 
