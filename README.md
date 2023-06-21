@@ -28,3 +28,8 @@ python export_gpu_version.py
 
 python recognize_gpu_with_lm_and_hidet.py
 ```
+
+Links:
+
+- https://pytorch.org/blog/introducing-hidet/
+- https://docs.hidet.org/stable/gallery/tutorials/optimize-pytorch-model.html
