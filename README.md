@@ -1,5 +1,7 @@
 # wav2vec2-hidet
 
+> NOTE: this is a work-in-progress thing, do not use it anywhere except dev machine
+
 Installation:
 
 ```
