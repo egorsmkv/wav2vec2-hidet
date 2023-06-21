@@ -1,5 +1,7 @@
 # wav2vec2-hidet
 
+Installation:
+
 ```
 git clone https://github.com/egorsmkv/wav2vec2-hidet
 cd wav2vec2-hidet
@@ -15,4 +17,12 @@ conda install -c conda-forge nvtx
 pip install hidet
 
 conda install -c conda-forge cudatoolkit-dev
+```
+
+Running:
+
+```
+python export_gpu_version.py
+
+python recognize_gpu_with_lm_and_hidet.py
 ```
