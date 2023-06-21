@@ -34,5 +34,7 @@ python recognize_gpu_with_lm_and_hidet.py
 
 Links:
 
+- https://arxiv.org/abs/2006.11477
+- https://huggingface.co/docs/transformers/model_doc/wav2vec2
 - https://pytorch.org/blog/introducing-hidet/
 - https://docs.hidet.org/stable/gallery/tutorials/optimize-pytorch-model.html
