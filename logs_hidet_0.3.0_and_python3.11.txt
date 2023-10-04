@@ -1,0 +1,103 @@
+Env (I have installed torch nightly builds 'cause they support Python 3.11):
+
+torch-2.2.0.dev20231004+cu118 torchaudio-2.2.0.dev20231004+cu118 torchvision-0.17.0.dev20231004+cu118
+
+--
+
+Labels length= 40
+Traceback (most recent call last):
+  File "/home/yehor/Work/wav2vec2-hidet/recognize_gpu_with_lm_and_hidet.py", line 68, in <module>
+    logits = model(input_values)[0].cpu().numpy()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1519, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1528, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 401, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1519, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1528, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 549, in catch_errors
+    return callback(frame, cache_entry, hooks, frame_state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 632, in _convert_frame
+    result = inner_convert(frame, cache_entry, hooks, frame_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 140, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 380, in _convert_frame_assert
+    return _compile(
+           ^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 559, in _compile
+    guarded_code = compile_inner(code, one_graph, hooks, transform)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 190, in time_wrapper
+    r = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 481, in compile_inner
+    out_code = transform_code_object(code, transform)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/bytecode_transformation.py", line 1028, in transform_code_object
+    transformations(instructions, code_options)
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/convert_frame.py", line 451, in transform
+    tracer.run()
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 2103, in run
+    super().run()
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 743, in run
+    and self.step()
+        ^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 706, in step
+    getattr(self, inst.opname)(inst)
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/symbolic_convert.py", line 2213, in RETURN_VALUE
+    self.output.compile_subgraph(
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/output_graph.py", line 885, in compile_subgraph
+    self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/output_graph.py", line 987, in compile_and_call_fx_graph
+    compiled_fn = self.call_user_compiler(gm)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/utils.py", line 190, in time_wrapper
+    r = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/output_graph.py", line 1054, in call_user_compiler
+    raise BackendCompilerFailed(self.compiler_fn, e).with_traceback(
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/output_graph.py", line 1039, in call_user_compiler
+    compiled_fn = compiler_fn(gm, self.example_inputs())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/_dynamo/repro/after_dynamo.py", line 117, in debug_wrapper
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/torch/__init__.py", line 1643, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/hidet/graph/frontend/torch/dynamo_backends.py", line 106, in hidet_backend
+    interpreter: Interpreter = hidet.frontend.from_torch(graph_module)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/hidet/graph/frontend/torch/__init__.py", line 48, in from_torch
+    return Interpreter(graph_module)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/hidet/graph/frontend/torch/interpreter.py", line 206, in __init__
+    self._check_support()
+  File "/home/yehor/Tools/anaconda3/envs/my/lib/python3.11/site-packages/hidet/graph/frontend/torch/interpreter.py", line 243, in _check_support
+    raise NotImplementedError("\n".join(lines))
+torch._dynamo.exc.BackendCompilerFailed: backend='hidet' raised:
+NotImplementedError: The following modules/functions are not supported by hidet yet:
+  torch._weight_norm
+  torch.rand
+
+Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
