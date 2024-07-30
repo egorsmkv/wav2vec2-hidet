@@ -1,5 +1,8 @@
 # wav2vec2-hidet
 
+> [!WARNING]
+> This test has moved to https://github.com/egorsmkv/wav2vec2-hidet-0.4.0
+
 > NOTE: this is a work-in-progress thing, do not use it anywhere except dev machine
 
 Installation:
